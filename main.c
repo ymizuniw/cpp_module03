@@ -9,9 +9,9 @@ int main(void)
     uint64_t ui;
 
     n1 =n2 = UINT_MAX;
-    ui = n1*n2;
-    printf("multi : %u\n", ui);
+    ui = n1*(n2);
+    printf("multi : %llu\n", ui);
     ui = n1 + n2;
-    printf("sum : %u\n", ui);
+    printf("sum : %llu\n", ui);
     return (0);
 }
