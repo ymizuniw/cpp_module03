@@ -8,8 +8,6 @@
             print_msg("ScavTrap constructor called");
         }
 
-        // ClapTrap::ClapTrap(const ClapTrap &other)
-
         ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
         {
             if (this!=&other)

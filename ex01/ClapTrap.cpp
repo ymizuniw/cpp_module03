@@ -22,7 +22,7 @@ void print_msg(std::string msg)
 //         void beRepaired(uint32_t amount);
 // };
 
-ClapTrap::ClapTrap(std::string name) : Name_(name), HitPoints_(DEFAULT_HP), EnergyPoints_(DEFAULT_ENERGY), AttackDamage_(DEFAULT_ATTACK)
+ClapTrap::ClapTrap(std::string name) : Name_(name), HitPoints_(DEFAULT_CLAPTRAP_HP), EnergyPoints_(DEFAULT_CLAPTRAP_ENERGY), AttackDamage_(DEFAULT_CLAPTRAP_ATTACK)
 {
     print_msg("ClapTrap default constructor called.");
 }
@@ -118,8 +118,8 @@ void ClapTrap::beRepaired(uint32_t amount)
         print_msg("Energy point is not enough");
         return ;
     }
-    if (static_cast<uint32_t>(DEFAULT_HP) - amount<HitPoints_)
-        HitPoints_= static_cast<uint32_t>(DEFAULT_HP);
+    if (static_cast<uint32_t>(DEFAULT_CLAPTRAP_HP) - amount<HitPoints_)
+        HitPoints_= static_cast<uint32_t>(DEFAULT_CLAPTRAP_HP);
     else
         HitPoints_+=amount;
     beRepaired_log(Name_, amount);

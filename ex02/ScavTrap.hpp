@@ -55,10 +55,8 @@
 
     //note that proper construction/destructino chaining must be shown in your tests.
     //when a ScavTrap is created, the program starts by constructing a ClapTrap. Destruction occrurs in reverse order.
-class ScavTrap : private ClapTrap
+class ScavTrap : protected ClapTrap
 {
-    private:
-        //
     public:
         ScavTrap(std::string name);
         ScavTrap(const ScavTrap &other);
@@ -68,22 +66,21 @@ class ScavTrap : private ClapTrap
 };
 
 //samename 
+// class Gamecharacter{
+//     public:
+//         virtual void attack(){
+//             //
+//         }
+// };
 
-class Gamecharacter{
-    public:
-        virtual void attack(){
-            //
-        }
-};
-
-class Warrior : public Gamecharacter{
-    public:
-        void attack() override{
-            //
-        }
-    void recover(){
-        //
-    }
-}
+// class Warrior : public Gamecharacter{
+//     public:
+//         void attack() override{
+//             //
+//         }
+//     void recover(){
+//         //
+//     }
+// }
 
 #endif

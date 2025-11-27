@@ -4,10 +4,10 @@
 #include <iostream>
 #include <iomanip>
 
-#define DEFAULT_HP 10
-#define DEFAULT_ENERGY 10
-#define DEFAULT_ATTACK 0
-#define DEFAULT_REPAIRE 10
+#define DEFAULT_CLAPTRAP_HP 10
+#define DEFAULT_CLAPTRAP_ENERGY 10
+#define DEFAULT_CLAPTRAP_ATTACK 0
+#define DEFAULT_CLAPTRAP_REPAIRE 10
 
 class ClapTrap
 {
