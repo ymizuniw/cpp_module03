@@ -69,21 +69,21 @@ class ScavTrap : private ClapTrap
 
 //samename 
 
-class Gamecharacter{
-    public:
-        virtual void attack(){
-            //
-        }
-};
+// class Gamecharacter{
+//     public:
+//         virtual void attack(){
+//             //
+//         }
+// };
 
-class Warrior : public Gamecharacter{
-    public:
-        void attack() override{
-            //
-        }
-    void recover(){
-        //
-    }
-}
+// class Warrior : public Gamecharacter{
+//     public:
+//         void attack() override{
+//             //
+//         }
+//     void recover(){
+//         //
+//     }
+// }
 
 #endif

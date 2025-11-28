@@ -1,6 +1,6 @@
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 
-FlagTrap::FlagTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     HitPoints_=FLAGTRAP_DEFAULT_HP;
     EnergyPoints_=FLAGTRAP_DEFAULT_ENERGY;
@@ -8,24 +8,29 @@ FlagTrap::FlagTrap(std::string name) : ClapTrap(name)
     print_msg("ScavTrap constructor called");
 }
 
-FlagTrap::FlagTrap(const FlagTrap &other) : ClapTrap(other)
+FragTrap::FragTrap(std::string name) : ClapTrap(name, FLAGTRAP_DEFAULT_HP,FLAGTRAP_DEFAULT_ENERGY,FLAGTRAP_DEFAULT_ATTACK)
 {
-    print_msg("FlagTrap constructor called");
+    print_msg("FragTrap constructor called");
 }
 
-FlagTrap &FlagTrap::operator=(const FlagTrap &other)
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
+{
+    print_msg("FragTrap constructor called");
+}
+
+FragTrap &FragTrap::operator=(const FragTrap &other)
 {
     if (this!=&other)
         ClapTrap::operator=(other);
     return (*this);
 }
 
-FlagTrap::~FlagTrap(void)
+FragTrap::~FragTrap(void)
 {
-    print_msg("FlagTrap destructor called.");
+    print_msg("FragTrap destructor called.");
 }
 
-void FlagTrap::highFiceGuys(void)
+void FragTrap::highFiceGuys(void)
 {
     print_msg("High five!");
 }

@@ -38,24 +38,23 @@
 //    cout << obj.g() << endl;
 // }
 
-    // private:
-    //     std::string Name_;
-    //     uint32_t HitPoints_;
-    //     uint32_t EnergyPoints_;
-    //     uint32_t AttackDamage_;
-    // public:
-    //     ClapTrap(std::string name);
-    //     ClapTrap(const ClapTrap &other);
-    //     ~ClapTrap(void);
-    //     ClapTrap &operator=(const ClapTrap &other);
-    //     void attack(const std::string &target);
-    //     void takeDamage(uint32_t amount);
-    //     void beRepaired(uint32_t amount);
+// private:
+//     std::string Name_;
+//     uint32_t HitPoints_;
+//     uint32_t EnergyPoints_;
+//     uint32_t AttackDamage_;
+// public:
+//     ClapTrap(std::string name);
+//     ClapTrap(const ClapTrap &other);
+//     ~ClapTrap(void);
+//     ClapTrap &operator=(const ClapTrap &other);
+//     void attack(const std::string &target);
+//     void takeDamage(uint32_t amount);
+//     void beRepaired(uint32_t amount);
 
-
-    //note that proper construction/destructino chaining must be shown in your tests.
-    //when a ScavTrap is created, the program starts by constructing a ClapTrap. Destruction occrurs in reverse order.
-class ScavTrap : protected ClapTrap
+//note that proper construction/destructino chaining must be shown in your tests.
+//when a ScavTrap is created, the program starts by constructing a ClapTrap. Destruction occrurs in reverse order.
+class ScavTrap : public virtual ClapTrap
 {
     public:
         ScavTrap(std::string name);
@@ -63,6 +62,8 @@ class ScavTrap : protected ClapTrap
         ScavTrap &operator=(const ScavTrap &other);
         ~ScavTrap(void);
         void guradGate(void);
+    protected:
+        ClapTrap::attack;
 };
 
 //samename 

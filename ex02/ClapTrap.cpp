@@ -1,4 +1,4 @@
-#include <ClapTrap.hpp>
+#include "ClapTrap.hpp"
 
 void print_msg(std::string msg)
 {
@@ -123,4 +123,9 @@ void ClapTrap::beRepaired(uint32_t amount)
     else
         HitPoints_+=amount;
     beRepaired_log(Name_, amount);
+}
+
+std::string &ClapTrap::getName(void)
+{
+    return (Name_);
 }

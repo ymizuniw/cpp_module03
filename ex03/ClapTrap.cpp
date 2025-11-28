@@ -1,4 +1,4 @@
-#include <ClapTrap.hpp>
+#include "ClapTrap.hpp"
 
 void print_msg(std::string msg)
 {
@@ -26,6 +26,12 @@ ClapTrap::ClapTrap(std::string name) : Name_(name), HitPoints_(DEFAULT_CLAPTRAP_
 {
     print_msg("ClapTrap default constructor called.");
 }
+
+ClapTrap::ClapTrap(std::string const &name, uint32_t HitPoints_, uint32_t EnergyPoints_, uint32_t AttackDamage_): 
+ Name_(name), HitPoints_(HitPoints_), EnergyPoints_(HitPoints_), AttackDamage_(AttackDamage_)
+ {
+    print_msg("ClapTrap 4 params constructor called.");
+ }
 
 ClapTrap::ClapTrap(const ClapTrap &other) : Name_(other.Name_),  HitPoints_(other.HitPoints_), EnergyPoints_(other.EnergyPoints_), AttackDamage_(other.AttackDamage_)
 {
@@ -123,4 +129,24 @@ void ClapTrap::beRepaired(uint32_t amount)
     else
         HitPoints_+=amount;
     beRepaired_log(Name_, amount);
+}
+
+std::string const &ClapTrap::getName(void) const
+{
+    return (Name_);
+}
+
+uint32_t ClapTrap::getHitPoints(void) const
+{
+    return (HitPoints_);
+}
+
+uint32_t ClapTrap::getEnergyPoints(void) const
+{
+    return (EnergyPoints_);
+}
+
+uint32_t ClapTrap::getAttackDamage(void) const
+{
+    return (AttackDamage_);
 }

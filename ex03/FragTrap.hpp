@@ -8,14 +8,16 @@
 #define FLAGTRAP_DEFAULT_ATTACK 30
 #define FLAGTRAP_DEFAULT_RECOVER 10
 
-class FlagTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
     public:
-        FlagTrap(std::string name);
-        FlagTrap(const FlagTrap &other);
-        FlagTrap &operator=(const FlagTrap &other);
-        ~FlagTrap(void);
+        FragTrap(std::string name);
+        FragTrap(const FragTrap &other);
+        FragTrap &operator=(const FragTrap &other);
+        ~FragTrap(void);
         void highFiceGuys(void);
+    private:
+        ClapTrap::attack;
 };
 
 #endif

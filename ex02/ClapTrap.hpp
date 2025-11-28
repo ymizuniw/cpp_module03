@@ -20,11 +20,13 @@ class ClapTrap
     public:
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &other);
+        ClapTrap(std::string name, uint32_t HitPoints_, uint32_t EnergyPoints_, uint32_t AttackDamage_);
         virtual ~ClapTrap(void);
         ClapTrap &operator=(const ClapTrap &other);
         void attack(const std::string &target);
         void takeDamage(uint32_t amount);
         void beRepaired(uint32_t amount);
+        std::string &getName(void);
 };
 
 void print_msg(std::string msg);
