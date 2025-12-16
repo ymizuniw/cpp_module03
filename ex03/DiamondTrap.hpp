@@ -13,7 +13,7 @@
 // attac() scavtrap
 class DiamondTrap : public ScavTrap, public FragTrap {
 private:
-  std::string name_;
+  std::string Name_;
 
 public:
   DiamondTrap(std::string name);

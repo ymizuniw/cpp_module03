@@ -5,9 +5,11 @@
 #include <DiamondTrap.hpp>
 
 DiamondTrap::DiamondTrap(std::string name)
-    : name_(name), ClapTrap(name.append("_clap_name"), DEFAULT_FRAGTRAP_HP,
-                            DEFAULT_SCAVTRAP_ENERGY, DEFAULT_FRAGTRAP_ATTACK),
-      ScavTrap(name), FragTrap(name) {}
+    : ClapTrap(name + "_clap_name", DEFAULT_FRAGTRAP_HP,
+               DEFAULT_SCAVTRAP_ENERGY, DEFAULT_FRAGTRAP_ATTACK),
+      ScavTrap(name), FragTrap(name), Name_(name) {
+  std::cout << "DiamondTrap::Constructor called" << std::endl;
+}
 
 void DiamondTrap::attack(const std::string &target) {
   ScavTrap::attack(target);
@@ -20,7 +22,9 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other)
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
   if (this != &other) {
-    *this = other;
+    ClapTrap::operator=(other);
+    ScavTrap::operator=(other);
+    FragTrap::operator=(other);
   }
   return (*this);
 }
@@ -39,8 +43,8 @@ void DiamondTrap::beRepaired(unsigned int amount) {
 
 // void beRepaired(unsigned int amount);
 void DiamondTrap::whoAmI() {
-  std::cout << "ClapTrap :" << Name_ << std::endl;
-  std::cout << "DiamondTrap: " << name_ << std::endl;
+  std::cout << "ClapTrap :" << ClapTrap::Name_ << std::endl;
+  std::cout << "DiamondTrap: " << Name_ << std::endl;
 }
 
 #ifdef DEBUG
