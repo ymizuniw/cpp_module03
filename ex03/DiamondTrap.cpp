@@ -1,47 +1,48 @@
-#include "DiamondTrap.hpp"
 
-//name:same as claptrap
-//hp fragtrap
-//energy scavtrap
-//attack amount fragtrap
-//attac() scavtrap
-DiamondTrap::DiamondTrap(std::string name):
-    name_(name),
- ClapTrap(name.append("_clap_name")),
-ScavTrap(name.append("_clap_name")),
-FragTrap(name.append("_clap_name"))
-{
-    
-    print_msg("DiamondTrap constructed.");
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include <DiamondTrap.hpp>
+
+DiamondTrap::DiamondTrap(std::string name)
+    : name_(name), ClapTrap(name.append("_clap_name"), DEFAULT_FRAGTRAP_HP,
+                            DEFAULT_SCAVTRAP_ENERGY, DEFAULT_FRAGTRAP_ATTACK),
+      ScavTrap(name), FragTrap(name) {}
+
+void DiamondTrap::attack(const std::string &target) {
+  ScavTrap::attack(target);
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &other):
- ClapTrap(other.getName(), FLAGTRAP_DEFAULT_HP, SCAVTRAP_DEFAULT_ENERGY, FLAGTRAP_DEFAULT_ATTACK),
-ScavTrap(other.getName()),
-FragTrap(other.getName())
-{
-    print_msg("DiamondTrap copy constructor called.");    
+DiamondTrap::DiamondTrap(const DiamondTrap &other)
+    : ClapTrap(other), ScavTrap(other), FragTrap(other) {
+  std::cout << "DiamondTrap::Copy-constructor called" << std::endl;
 }
 
-DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
-{
-    if (this!=&other)
-    {
-        name_ = other.name_;
-        ClapTrap::operator=(other);
-        ScavTrap::operator=(other);
-        FragTrap::operator=(other);
-    }
-    return (*this);
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
+  if (this != &other) {
+    *this = other;
+  }
+  return (*this);
 }
 
-DiamondTrap::~DiamondTrap(void)
-{
-    print_msg("DiamondTrap destructor called.");
+DiamondTrap::~DiamondTrap(void) {
+  std::cout << "DiamondTrap::Destructor called" << std::endl;
 }
 
- void DiamondTrap::whoAmI(void)
- {
-    std::cout << "ClapTrap: " << getName() << std::endl;
-    std::cout << "DiamondTrap: " << name_ << std::endl;
- }
+void DiamondTrap::takeDamage(unsigned int amount) {
+  ClapTrap::takeDamage(amount);
+}
+
+void DiamondTrap::beRepaired(unsigned int amount) {
+  ClapTrap::beRepaired(amount);
+}
+
+// void beRepaired(unsigned int amount);
+void DiamondTrap::whoAmI() {
+  std::cout << "ClapTrap :" << Name_ << std::endl;
+  std::cout << "DiamondTrap: " << name_ << std::endl;
+}
+
+#ifdef DEBUG
+void print_status(ClapTrap::print_status(););
+#endif

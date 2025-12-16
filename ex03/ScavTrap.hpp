@@ -1,12 +1,12 @@
 #ifndef SCAV_TRAP_HPP
 #define SCAV_TRAP_HPP
 
-#include "ClapTrap.hpp"
-#define SCAVTRAP_DEFAULT_HP 100
-#define SCAVTRAP_DEFAULT_ENERGY 50
-#define SCAVTRAP_DEFAULT_ATTACK 20
-#define SCAVTRAP_DEFAULT_REPAIRE 10
-// COST?
+#include <ClapTrap.hpp>
+
+#define DEFAULT_SCAVTRAP_HP 100
+#define DEFAULT_SCAVTRAP_ENERGY 50
+#define DEFAULT_SCAVTRAP_ATTACK 20
+#define DEFAULT_SCAVTRAP_REPAIRE 10
 
 // ポリモアフィック関数 は、複数の型のオブジェクトに適用できる関数です。
 // C++ では、ポリモアフィック関数は、2 つの方法でインプリメントできます。
@@ -20,69 +20,20 @@
 // 継承時、子クラスは親クラスのprivate以外のメンバーにアクセスできる。親クラスは子クラスのpublicメンバー以外にアクセスできない。
 // 包含関係があるので、逆は成り立たない。
 
-// #include <iostream>
-// using namespace std;
-
-// class A {
-//    int data;
-// public:
-//    void f(int arg) { data = arg; }
-//    int g() { return data; }
-// };
-
-// class B : public A { };
-
-// int main() {
-//    B obj;
-//    obj.f(20);
-//    cout << obj.g() << endl;
-// }
-
-// private:
-//     std::string Name_;
-//     unsigned int HitPoints_;
-//     unsigned int EnergyPoints_;
-//     unsigned int AttackDamage_;
-// public:
-//     ClapTrap(std::string name);
-//     ClapTrap(const ClapTrap &other);
-//     ~ClapTrap(void);
-//     ClapTrap &operator=(const ClapTrap &other);
-//     void attack(const std::string &target);
-//     void takeDamage(unsigned int amount);
-//     void beRepaired(unsigned int amount);
-
-// note that proper construction/destructino chaining must be shown in your
-// tests. when a ScavTrap is created, the program starts by constructing a
-// ClapTrap. Destruction occrurs in reverse order.
-class ScavTrap : public virtual ClapTrap {
+class ScavTrap : private virtual ClapTrap {
+private:
 public:
   ScavTrap(std::string name);
   ScavTrap(const ScavTrap &other);
   ScavTrap &operator=(const ScavTrap &other);
   ~ScavTrap(void);
+  void attack(const std::string &target);
+  void takeDamage(unsigned int amount);
+  void beRepaired(unsigned int amount);
   void guradGate(void);
-
-protected:
-  ClapTrap::attack;
+#ifdef DEBUG
+  void print_status(void);
+#endif
 };
-
-// samename
-//  class Gamecharacter{
-//      public:
-//          virtual void attack(){
-//              //
-//          }
-//  };
-
-// class Warrior : public Gamecharacter{
-//     public:
-//         void attack() override{
-//             //
-//         }
-//     void recover(){
-//         //
-//     }
-// }
 
 #endif

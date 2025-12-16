@@ -1,17 +1,22 @@
 #ifndef CLAP_TRAP_H
 #define CLAP_TRAP_H
 
-#include <iomanip>
-#include <iostream>
+#include <string>
 
+#ifndef DEBUG
 #define DEFAULT_CLAPTRAP_HP 10
 #define DEFAULT_CLAPTRAP_ENERGY 10
 #define DEFAULT_CLAPTRAP_ATTACK 0
 #define DEFAULT_CLAPTRAP_REPAIRE 10
+#else
+#define DEFAULT_CLAPTRAP_HP 15
+#define DEFAULT_CLAPTRAP_ENERGY 10
+#define DEFAULT_CLAPTRAP_ATTACK 10
+#define DEFAULT_CLAPTRAP_REPAIRE 10
+#endif
 
-// for polymophism.
 class ClapTrap {
-private:
+protected:
   std::string Name_;
   unsigned int HitPoints_;
   unsigned int EnergyPoints_;
@@ -19,22 +24,25 @@ private:
 
 public:
   ClapTrap(std::string name);
+  ClapTrap(std::string name, unsigned int hitPoints, unsigned int energyPoints,
+           unsigned int attackDamage);
   ClapTrap(const ClapTrap &other);
-  ClapTrap(std::string const &name, unsigned int HitPoints_,
-           unsigned int EnergyPoints_, unsigned int AttackDamage_);
-  virtual ~ClapTrap(void);
+  ~ClapTrap(void);
   ClapTrap &operator=(const ClapTrap &other);
   void attack(const std::string &target);
   void takeDamage(unsigned int amount);
   void beRepaired(unsigned int amount);
-
-protected:
-  std::string const &getName(void) const;
-  unsigned int getEnergyPoints(void) const;
-  unsigned int getHitPoints(void) const;
-  unsigned int getAttackDamage(void) const;
+#ifdef DEBUG
+  void print_status(void); // debug
+#endif
 };
 
+// print_msg
 void print_msg(std::string msg);
+
+// logs
+void attack_log(const std::string &subject, const std::string &object);
+void takeDamage_log(const std::string name, unsigned int amount);
+void beRepaired_log(const std::string name, unsigned int amount);
 
 #endif

@@ -1,9 +1,10 @@
 #ifndef DIAMONDTRAP_HPP
 #define DIAMONDTRAP_HPP
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include <ClapTrap.hpp>
+#include <FragTrap.hpp>
+#include <ScavTrap.hpp>
+#include <iostream>
 
 // name:same as claptrap
 // hp fragtrap
@@ -16,12 +17,16 @@ private:
 
 public:
   DiamondTrap(std::string name);
-  // DiamondTrap(std::string name, unsigned int HitPoints_, unsigned int
-  // EnergyPoints_, unsigned int AttackDamage_);
   DiamondTrap(const DiamondTrap &other);
   DiamondTrap &operator=(const DiamondTrap &other);
   ~DiamondTrap(void);
+  void attack(const std::string &target);
+  void takeDamage(unsigned int amount);
+  void beRepaired(unsigned int amount);
   void whoAmI(void); // this and claptrap's name.
+#ifdef DEBUG
+  void print_status(void);
+#endif
 };
 
 #endif
