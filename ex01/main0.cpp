@@ -1,4 +1,4 @@
-#include "ClapTrap.hpp"
+#include <ScavTrap.hpp>
 #include <iostream>
 
 int main(void) {
@@ -42,5 +42,6 @@ int main(void) {
 #ifdef DEBUG
   Ct2.print_status();
 #endif
+  return (0);
   return (0);
 }
