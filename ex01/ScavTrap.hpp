@@ -3,10 +3,10 @@
 
 #include <ClapTrap.hpp>
 
-#define SCAVTRAP_DEFAULT_HP 100
-#define SCAVTRAP_DEFAULT_ENERGY 50
-#define SCAVTRAP_DEFAULT_ATTACK 20
-#define SCAVTRAP_DEFAULT_REPAIRE 10
+#define DEFAULT_SCAVTRAP_HP 100
+#define DEFAULT_SCAVTRAP_ENERGY 50
+#define DEFAULT_SCAVTRAP_ATTACK 20
+#define DEFAULT_SCAVTRAP_REPAIRE 10
 
 // ポリモアフィック関数 は、複数の型のオブジェクトに適用できる関数です。
 // C++ では、ポリモアフィック関数は、2 つの方法でインプリメントできます。
@@ -27,6 +27,9 @@ public:
   ScavTrap(const ScavTrap &other);
   ScavTrap &operator=(const ScavTrap &other);
   ~ScavTrap(void);
+  void attack(const std::string &target);
+  void takeDamage(unsigned int amount);
+  void beRepaired(unsigned int amount);
   void guradGate(void);
 #ifdef DEBUG
   void print_status(void);

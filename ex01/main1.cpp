@@ -14,5 +14,16 @@ int main(void) {
   St4.print_status();
   St5.print_status();
 #endif
+  St1.attack("Scav2");
+  St2.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
+  St3.beRepaired(DEFAULT_SCAVTRAP_REPAIRE);
+  St4.guradGate();
+#ifdef DEBUG
+  St1.print_status();
+  St2.print_status();
+  St3.print_status();
+  St4.print_status();
+  St5.print_status();
+#endif
   return (0);
 }

@@ -11,7 +11,7 @@ ifeq ($(DEBUG),1)
 endif
 
 #NAME_0
-NAME_0 := test01
+NAME_0 := test00
 SRCS_0 := ClapTrap.cpp \
 ClapTrapLogs.cpp \
 ClapTrapRangeCheck.cpp \
@@ -20,7 +20,7 @@ main0.cpp
 OBJS_0:=$(SRCS_0:%.cpp=%.o)
 
 #NAME_1
-NAME_1 := test02
+NAME_1 := test01
 SRCS_1 := ClapTrap.cpp \
 ClapTrapLogs.cpp \
 ClapTrapRangeCheck.cpp \
@@ -28,12 +28,13 @@ ScavTrap.cpp \
 main1.cpp
 OBJS_1:=$(SRCS_1:%.cpp=%.o)
 
+all: $(TESTS)
+
 $(NAME_0): $(OBJS_0)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS_0)
 $(NAME_1): $(OBJS_1)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS_1)
 
-all: $(TESTS)
 clean:
 	$(RM) -f $(OBJS)
 fclean: clean

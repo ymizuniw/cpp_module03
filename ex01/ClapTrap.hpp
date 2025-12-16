@@ -16,7 +16,7 @@
 #endif
 
 class ClapTrap {
-private:
+protected:
   std::string Name_;
   unsigned int HitPoints_;
   unsigned int EnergyPoints_;
