@@ -27,4 +27,4 @@ fi
 
 git add .
 git commit -m "$MSG"
-git push "$REMOTE $BRANCH"
+git push "$REMOTE" "$BRANCH"
