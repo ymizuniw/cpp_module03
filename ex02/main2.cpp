@@ -25,5 +25,12 @@ int main(void) {
   Ft4.print_status();
   Ft5.print_status();
 #endif
+  Ft3.takeDamage(200);
+  Ft3.attack("Frag2");
+  Ft3.beRepaired(100);
+  Ft3.highFiveGuys();
+#ifdef DEBUG
+  Ft3.print_status();
+#endif
   return (0);
 }

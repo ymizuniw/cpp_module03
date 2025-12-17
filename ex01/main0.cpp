@@ -42,6 +42,8 @@ int main(void) {
 #ifdef DEBUG
   Ct2.print_status();
 #endif
-  return (0);
+  Ct1.takeDamage(100);
+  Ct1.attack("Ct2");
+  Ct1.beRepaired(100);
   return (0);
 }

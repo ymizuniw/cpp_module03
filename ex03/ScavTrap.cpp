@@ -26,47 +26,52 @@ ScavTrap::~ScavTrap(void) { print_msg("ScavTrap default destructor called."); }
 void ScavTrap::attack(const std::string &target) {
   std::cout << "[LOG] ";
   if (HitPoints_ == 0) {
-    std::cout << Name_ << " is HP of 0. cannot attack!" << std::endl;
+    std::cout << Name_ << " is HP of 0" << std::endl;
     return;
   }
   if (EnergyPoints_ > 0) {
     EnergyPoints_ = EnergyPoints_ - static_cast<unsigned int>(1);
-    std::cout << Name_ << " attacks " << target << std::endl;
+    std::cout << Name_ << " ScavTrap::attacks " << target << std::endl;
   } else
-    print_msg("Energy is not enough. cannot attack!");
+    print_msg("Energy is not enough.");
 }
 
 void ScavTrap::takeDamage(unsigned int amount) {
-  std::cout << "[LOG] ";
-  if (HitPoints_ < amount)
-    HitPoints_ = 0;
-  else
-    HitPoints_ -= amount;
-  takeDamage_log(Name_, amount);
+  // std::cout << "[LOG] ";
+  // if (HitPoints_ < amount)
+  //   HitPoints_ = 0;
+  // else
+  //   HitPoints_ -= amount;
+  // takeDamage_log(Name_, amount);
+  ClapTrap::takeDamage(amount);
 }
 
 void ScavTrap::beRepaired(unsigned int amount) {
-  std::cout << "[LOG] ";
-  if (HitPoints_ == 0) {
-    std::cout << Name_ << "is HP of 0. cannto repair!" << std::endl;
-    return;
-  }
-  if (EnergyPoints_ > 0)
-    EnergyPoints_ = EnergyPoints_ - static_cast<unsigned int>(1);
-  else {
-    print_msg("Energy point is not enough. cannot repair!");
-    return;
-  }
-  if (static_cast<unsigned int>(DEFAULT_CLAPTRAP_HP) - amount < HitPoints_)
-    HitPoints_ = static_cast<unsigned int>(DEFAULT_CLAPTRAP_HP);
-  else
-    HitPoints_ += amount;
-  beRepaired_log(Name_, amount);
+  // std::cout << "[LOG] ";
+  // if (HitPoints_ == 0) {
+  //   std::cout << Name_ << " is HP of 0" << std::endl;
+  //   return;
+  // }
+  // if (EnergyPoints_ > 0)
+  //   EnergyPoints_ = EnergyPoints_ - static_cast<unsigned int>(1);
+  // else {
+  //   print_msg("Energy point is not enough");
+  //   return;
+  // }
+  // if (static_cast<unsigned int>(DEFAULT_CLAPTRAP_HP) - amount < HitPoints_)
+  //   HitPoints_ = static_cast<unsigned int>(DEFAULT_CLAPTRAP_HP);
+  // else
+  //   HitPoints_ += amount;
+  // beRepaired_log(Name_, amount);
+  ClapTrap::beRepaired(amount);
 }
 
 void ScavTrap::guradGate(void) {
   std::cout << "[LOG] ";
-  std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+  if (HitPoints_ > 0)
+    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+  else
+    std::cout << Name_ << " is HP of 0" << std::endl;
 }
 
 #ifdef DEBUG

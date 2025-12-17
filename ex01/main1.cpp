@@ -25,5 +25,12 @@ int main(void) {
   St4.print_status();
   St5.print_status();
 #endif
+  St1.takeDamage(100);
+  St1.beRepaired(100);
+  St1.attack("Scav2");
+  St1.guradGate();
+#ifdef DEBUG
+  St1.print_status();
+#endif
   return (0);
 }

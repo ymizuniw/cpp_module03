@@ -40,10 +40,20 @@ int main(void) {
   Dt1.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
   Dt1.attack("Dia2");                       // cannot attack
   Dt1.beRepaired(DEFAULT_CLAPTRAP_REPAIRE); // cannnot repaired.
+  Dt2.whoAmI();
+  Dt2.guradGate();
+  Dt2.highFiveGuys();
+  Dt1.whoAmI();
+  Dt1.takeDamage(100);
+  // do nothing.
+  Dt1.whoAmI();
+  Dt1.attack("Dia2");
+  Dt1.beRepaired(100);
+  Dt1.guradGate();
+  Dt1.highFiveGuys();
 #ifdef DEBUG
   Dt1.print_status();
   Dt2.print_status();
 #endif
-  return (0);
   return (0);
 }

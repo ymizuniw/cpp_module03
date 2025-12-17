@@ -26,8 +26,9 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 ClapTrap::~ClapTrap(void) { print_msg("ClapTrap default destructor called."); }
 
 void ClapTrap::attack(const std::string &target) {
+  std::cout << "[LOG] ";
   if (HitPoints_ == 0) {
-    std::cout << Name_ << "is HP of 0";
+    std::cout << Name_ << " is HP of 0" << std::endl;
     return;
   }
   if (EnergyPoints_ > 0) {
@@ -38,6 +39,7 @@ void ClapTrap::attack(const std::string &target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
+  std::cout << "[LOG] ";
   if (HitPoints_ < amount)
     HitPoints_ = 0;
   else
@@ -46,8 +48,9 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
+  std::cout << "[LOG] ";
   if (HitPoints_ == 0) {
-    std::cout << Name_ << "is HP of 0";
+    std::cout << Name_ << " is HP of 0" << std::endl;
     return;
   }
   if (EnergyPoints_ > 0)

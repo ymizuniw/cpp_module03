@@ -35,36 +35,40 @@ DiamondTrap::~DiamondTrap(void) {
 }
 
 void DiamondTrap::takeDamage(unsigned int amount) {
-  std::cout << "[LOG] ";
-  if (HitPoints_ < amount)
-    HitPoints_ = 0;
-  else
-    HitPoints_ -= amount;
-  takeDamage_log(this->Name_, amount);
+  // std::cout << "[LOG] ";
+  // if (HitPoints_ < amount)
+  //   HitPoints_ = 0;
+  // else
+  //   HitPoints_ -= amount;
+  // takeDamage_log(this->Name_, amount);
+  ClapTrap::takeDamage(amount);
 }
 
 void DiamondTrap::beRepaired(unsigned int amount) {
-  std::cout << "[LOG] ";
-  if (HitPoints_ == 0) {
-    std::cout << Name_ << " is HP of 0. cannot repair!" << std::endl;
-    return;
-  }
-  if (EnergyPoints_ > 0)
-    EnergyPoints_ = EnergyPoints_ - static_cast<unsigned int>(1);
-  else {
-    print_msg("Energy point is not enough! cannot repair!");
-    return;
-  }
-  if (static_cast<unsigned int>(DEFAULT_FRAGTRAP_HP) - amount < HitPoints_)
-    HitPoints_ = static_cast<unsigned int>(DEFAULT_FRAGTRAP_HP);
-  else
-    HitPoints_ += amount;
-  beRepaired_log(Name_, amount);
+  // std::cout << "[LOG] ";
+  // if (HitPoints_ == 0) {
+  //   std::cout << Name_ << " is HP of 0. cannot repair!" << std::endl;
+  //   return;
+  // }
+  // if (EnergyPoints_ > 0)
+  //   EnergyPoints_ = EnergyPoints_ - static_cast<unsigned int>(1);
+  // else {
+  //   print_msg("Energy point is not enough! cannot repair!");
+  //   return;
+  // }
+  // if (static_cast<unsigned int>(DEFAULT_FRAGTRAP_HP) - amount < HitPoints_)
+  //   HitPoints_ = static_cast<unsigned int>(DEFAULT_FRAGTRAP_HP);
+  // else
+  //   HitPoints_ += amount;
+  // beRepaired_log(Name_, amount);
+  ClapTrap::beRepaired(amount);
 }
 
 // void beRepaired(unsigned int amount);
 void DiamondTrap::whoAmI() {
+  std::cout << "[LOG] ";
   std::cout << "ClapTrap :" << ClapTrap::Name_ << std::endl;
+  std::cout << "[LOG] ";
   std::cout << "DiamondTrap: " << Name_ << std::endl;
 }
 
