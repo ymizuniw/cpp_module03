@@ -23,6 +23,7 @@ private:
   unsigned int AttackDamage_;
 
 public:
+  ClapTrap(void);
   ClapTrap(std::string name);
   ClapTrap(const ClapTrap &other);
   ~ClapTrap(void);

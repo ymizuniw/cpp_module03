@@ -2,6 +2,7 @@
 #include <DiamondTrap.hpp>
 
 int main(void) {
+  DiamondTrap Dt0; // default constructor.
   DiamondTrap Dt1("Dia1");
   DiamondTrap Dt2("Dia2");
   DiamondTrap Dt3("Dia3");

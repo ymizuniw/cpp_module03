@@ -10,11 +10,11 @@
 
 // 同次元クラス間では属性に関係なくメンバーにアクセスできる。属性はアクセサともいい、外部からアクセスする時の属性を指す。
 // 継承時、子クラスは親クラスのprivate以外のメンバーにアクセスできる。親クラスは子クラスのpublicメンバー以外にアクセスできない。
-// 包含関係があるので、逆は成り立たない。
+// 包含関係があri、逆は成り立たない。
 
-class ScavTrap : private ClapTrap {
-private:
+class ScavTrap : private virtual ClapTrap {
 public:
+  ScavTrap(void);
   ScavTrap(std::string name);
   ScavTrap(const ScavTrap &other);
   ScavTrap &operator=(const ScavTrap &other);

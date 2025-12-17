@@ -2,10 +2,16 @@
 #include <ScavTrap.hpp>
 #include <iostream>
 
+ScavTrap::ScavTrap(void)
+    : ClapTrap("ScavTrap_default_name", DEFAULT_SCAVTRAP_HP,
+               DEFAULT_SCAVTRAP_ENERGY, DEFAULT_SCAVTRAP_ATTACK) {
+  print_msg("ScavTrap default constructor called");
+}
+
 ScavTrap::ScavTrap(std::string name)
     : ClapTrap(name, DEFAULT_SCAVTRAP_HP, DEFAULT_SCAVTRAP_ENERGY,
                DEFAULT_SCAVTRAP_ATTACK) {
-  print_msg("ScavTrap constructor called");
+  print_msg("ScavTrap parameterized constructor called");
 }
 
 // ClapTrap::ClapTrap(const ClapTrap &other)

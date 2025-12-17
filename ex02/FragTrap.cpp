@@ -2,10 +2,16 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+FragTrap::FragTrap(void)
+    : ClapTrap("FragTrap_default_name", DEFAULT_FRAGTRAP_HP,
+               DEFAULT_FRAGTRAP_ENERGY, DEFAULT_FRAGTRAP_ATTACK) {
+  print_msg("FragTrap default constructor called");
+}
+
 FragTrap::FragTrap(std::string name)
     : ClapTrap(name, DEFAULT_FRAGTRAP_HP, DEFAULT_FRAGTRAP_ENERGY,
                DEFAULT_FRAGTRAP_ATTACK) {
-  print_msg("FragTrap constructor called");
+  print_msg("FragTrap parameterized constructor called");
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {

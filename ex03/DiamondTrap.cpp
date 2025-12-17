@@ -5,6 +5,10 @@
 #include <DiamondTrap.hpp>
 #include <iostream>
 
+DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap(), Name_() {
+  std::cout << "DiamondTrap default constructor called" << std::endl;
+}
+
 DiamondTrap::DiamondTrap(std::string name)
     : ClapTrap(name + "_clap_name", DEFAULT_FRAGTRAP_HP,
                DEFAULT_SCAVTRAP_ENERGY, DEFAULT_FRAGTRAP_ATTACK),

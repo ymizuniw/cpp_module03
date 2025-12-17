@@ -1,12 +1,19 @@
 #include <ClapTrap.hpp>
 #include <iostream>
 
+ClapTrap::ClapTrap(void)
+    : Name_("Clap_default_name"), HitPoints_(DEFAULT_CLAPTRAP_HP),
+      EnergyPoints_(DEFAULT_CLAPTRAP_ENERGY),
+      AttackDamage_(DEFAULT_CLAPTRAP_ATTACK) {
+  print_msg("ClapTrap default constructor called.");
+}
+
 // when debugging, change the value of HP and test of repair.
 ClapTrap::ClapTrap(std::string name)
     : Name_(name), HitPoints_(DEFAULT_CLAPTRAP_HP),
       EnergyPoints_(DEFAULT_CLAPTRAP_ENERGY),
       AttackDamage_(DEFAULT_CLAPTRAP_ATTACK) {
-  print_msg("ClapTrap default constructor called.");
+  print_msg("ClapTrap parameterized constructor called.");
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
