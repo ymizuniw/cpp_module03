@@ -2,7 +2,7 @@ TESTS = $(NAME_0)
 OBJS = $(OBJS_0)
 
 CXX = c++
-CXXFLAGS = -std=c++98 -Wno-shadow -Wall -Wextra -Werror
+CXXFLAGS = -std=c++98 -Wno-shadow -pedantic-errors -Wall -Wextra -Werror
 INCS = -I.
 
 ifeq ($(DEBUG),1)
