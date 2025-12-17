@@ -1,4 +1,5 @@
 #include <ClapTrap.hpp>
+#include <iomanip>
 #include <iostream>
 
 void print_msg(std::string msg) { std::cout << msg << std::endl; }
@@ -18,10 +19,14 @@ void beRepaired_log(const std::string name, unsigned int amount) {
 #ifdef DEBUG
 void ClapTrap::print_status(void) {
   std::cout << "\n============STATUS============" << std::endl;
-  std::cout << "Name: " << Name_ << std::endl;
-  std::cout << "HitPoints: " << HitPoints_ << std::endl;
-  std::cout << "EnergyPoints: " << EnergyPoints_ << std::endl;
-  std::cout << "AttackDamage: " << AttackDamage_ << std::endl;
+  std::cout << std::setw(12) << std::left << "Name" << " : " << Name_
+            << std::endl;
+  std::cout << std::setw(12) << std::left << "HitPoints" << " : " << HitPoints_
+            << std::endl;
+  std::cout << std::setw(12) << std::left << "EnergyPoints" << " : "
+            << EnergyPoints_ << std::endl;
+  std::cout << std::setw(12) << std::left << "AttackDamage" << " : "
+            << AttackDamage_ << std::endl;
   std::cout << "==============================\n" << std::endl;
 }
 #endif
