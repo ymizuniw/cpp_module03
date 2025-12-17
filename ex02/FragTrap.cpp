@@ -35,40 +35,14 @@ void FragTrap::attack(const std::string &target) {
     print_msg("Energy is not enough.");
 }
 
-void FragTrap::takeDamage(unsigned int amount) {
-  // std::cout << "[LOG] ";
-  // if (HitPoints_ < amount)
-  //   HitPoints_ = 0;
-  // else
-  //   HitPoints_ -= amount;
-  // takeDamage_log(Name_, amount);
-  ClapTrap::takeDamage(amount);
-}
+void FragTrap::takeDamage(unsigned int amount) { ClapTrap::takeDamage(amount); }
 
-void FragTrap::beRepaired(unsigned int amount) {
-  // std::cout << "[LOG] ";
-  // if (HitPoints_ == 0) {
-  //   std::cout << Name_ << " is HP of 0" << std::endl;
-  //   return;
-  // }
-  // if (EnergyPoints_ > 0)
-  //   EnergyPoints_ = EnergyPoints_ - static_cast<unsigned int>(1);
-  // else {
-  //   print_msg("Energy point is not enough");
-  //   return;
-  // }
-  // if (static_cast<unsigned int>(DEFAULT_CLAPTRAP_HP) - amount < HitPoints_)
-  //   HitPoints_ = static_cast<unsigned int>(DEFAULT_CLAPTRAP_HP);
-  // else
-  //   HitPoints_ += amount;
-  // beRepaired_log(Name_, amount);
-  ClapTrap::beRepaired(amount);
-}
+void FragTrap::beRepaired(unsigned int amount) { ClapTrap::beRepaired(amount); }
 
 void FragTrap::highFiveGuys(void) {
   std::cout << "[LOG] ";
   if (HitPoints_ > 0)
-    std::cout << "highFive" << std::endl;
+    std::cout << Name_ << " highFive!" << std::endl;
   else
     std::cout << Name_ << " is HP of 0" << std::endl;
 }
