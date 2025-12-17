@@ -4,7 +4,6 @@
 #include <ClapTrap.hpp>
 #include <FragTrap.hpp>
 #include <ScavTrap.hpp>
-#include <iostream>
 
 // name:same as claptrap
 // hp fragtrap

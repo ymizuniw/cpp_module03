@@ -25,14 +25,14 @@ FragTrap::~FragTrap(void) { print_msg("FragTrap destructor called."); }
 void FragTrap::attack(const std::string &target) {
   std::cout << "[LOG] ";
   if (HitPoints_ == 0) {
-    std::cout << Name_ << "is HP of 0";
+    std::cout << Name_ << "is HP of 0. cannot attack!";
     return;
   }
   if (EnergyPoints_ > 0) {
     EnergyPoints_ = EnergyPoints_ - static_cast<unsigned int>(1);
     std::cout << "FragTrap::" << Name_ << " attacks " << target << std::endl;
   } else
-    print_msg("Energy is not enough.");
+    print_msg("Energy is not enough. cannot attack!");
 }
 
 void FragTrap::takeDamage(unsigned int amount) {
@@ -47,13 +47,13 @@ void FragTrap::takeDamage(unsigned int amount) {
 void FragTrap::beRepaired(unsigned int amount) {
   std::cout << "[LOG] ";
   if (HitPoints_ == 0) {
-    std::cout << Name_ << "is HP of 0";
+    std::cout << Name_ << "is HP of 0. cannot repair!" << std::endl;
     return;
   }
   if (EnergyPoints_ > 0)
     EnergyPoints_ = EnergyPoints_ - static_cast<unsigned int>(1);
   else {
-    print_msg("Energy point is not enough");
+    print_msg("Energy point is not enough. cannot repair!");
     return;
   }
   if (static_cast<unsigned int>(DEFAULT_CLAPTRAP_HP) - amount < HitPoints_)

@@ -3,6 +3,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include <DiamondTrap.hpp>
+#include <iostream>
 
 DiamondTrap::DiamondTrap(std::string name)
     : ClapTrap(name + "_clap_name", DEFAULT_FRAGTRAP_HP,
@@ -34,11 +35,31 @@ DiamondTrap::~DiamondTrap(void) {
 }
 
 void DiamondTrap::takeDamage(unsigned int amount) {
-  ClapTrap::takeDamage(amount);
+  std::cout << "[LOG] ";
+  if (HitPoints_ < amount)
+    HitPoints_ = 0;
+  else
+    HitPoints_ -= amount;
+  takeDamage_log(this->Name_, amount);
 }
 
 void DiamondTrap::beRepaired(unsigned int amount) {
-  ClapTrap::beRepaired(amount);
+  std::cout << "[LOG] ";
+  if (HitPoints_ == 0) {
+    std::cout << Name_ << " is HP of 0. cannot repair!" << std::endl;
+    return;
+  }
+  if (EnergyPoints_ > 0)
+    EnergyPoints_ = EnergyPoints_ - static_cast<unsigned int>(1);
+  else {
+    print_msg("Energy point is not enough! cannot repair!");
+    return;
+  }
+  if (static_cast<unsigned int>(DEFAULT_FRAGTRAP_HP) - amount < HitPoints_)
+    HitPoints_ = static_cast<unsigned int>(DEFAULT_FRAGTRAP_HP);
+  else
+    HitPoints_ += amount;
+  beRepaired_log(Name_, amount);
 }
 
 // void beRepaired(unsigned int amount);
@@ -48,5 +69,5 @@ void DiamondTrap::whoAmI() {
 }
 
 #ifdef DEBUG
-void print_status(ClapTrap::print_status(););
+void DiamondTrap::print_status(void) { ClapTrap::print_status(); }
 #endif

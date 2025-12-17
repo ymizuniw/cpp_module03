@@ -1,3 +1,4 @@
+#include "ScavTrap.hpp"
 #include <DiamondTrap.hpp>
 
 int main(void) {
@@ -16,7 +17,7 @@ int main(void) {
 #endif
   Dt1.attack("Dia2");
   Dt2.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
-  Dt3.beRepaired(DEFAULT_SCAVTRAP_REPAIRE);
+  Dt2.beRepaired(DEFAULT_CLAPTRAP_REPAIRE);
   Dt4.guradGate();
 #ifdef DEBUG
   Dt1.print_status();
@@ -24,6 +25,24 @@ int main(void) {
   Dt3.print_status();
   Dt4.print_status();
   Dt5.print_status();
+#endif
+  Dt2.attack("Dia1");
+  Dt1.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
+  Dt2.attack("Dia1");
+  Dt1.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
+  Dt2.attack("Dia1");
+  Dt1.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
+  Dt2.attack("Dia1");
+  Dt1.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
+  Dt2.attack("Dia1");
+  Dt1.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
+  Dt2.attack("Dia1");
+  Dt1.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
+  Dt1.attack("Dia2");                       // cannot attack
+  Dt1.beRepaired(DEFAULT_CLAPTRAP_REPAIRE); // cannnot repaired.
+#ifdef DEBUG
+  Dt1.print_status();
+  Dt2.print_status();
 #endif
   return (0);
   return (0);
