@@ -17,11 +17,11 @@ void beRepaired_log(const std::string name, unsigned int amount) {
 
 #ifdef DEBUG
 void ClapTrap::print_status(void) {
-  std::cout << "\n=========STATUS=======\n" << std::endl;
+  std::cout << "============STATUS============" << std::endl;
   std::cout << "Name: " << Name_ << std::endl;
   std::cout << "HitPoints: " << HitPoints_ << std::endl;
   std::cout << "EnergyPoints: " << EnergyPoints_ << std::endl;
   std::cout << "AttackDamage: " << AttackDamage_ << std::endl;
-  std::cout << "\n========================\n" << std::endl;
+  std::cout << "\n==============================\n" << std::endl;
 }
 #endif
