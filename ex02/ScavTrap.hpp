@@ -12,7 +12,7 @@
 // 継承時、子クラスは親クラスのprivate以外のメンバーにアクセスできる。親クラスは子クラスのpublicメンバー以外にアクセスできない。
 // 包含関係があri、逆は成り立たない。
 
-class ScavTrap : private virtual ClapTrap {
+class ScavTrap : public ClapTrap {
 public:
   ScavTrap(void);
   ScavTrap(std::string name);

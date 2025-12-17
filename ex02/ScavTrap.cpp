@@ -26,7 +26,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
   return (*this);
 }
 
-ScavTrap::~ScavTrap(void) { print_msg("ScavTrap default destructor called."); }
+ScavTrap::~ScavTrap(void) { print_msg("ScavTrap destructor called."); }
 
 void ScavTrap::attack(const std::string &target) {
   std::cout << "[LOG] ";

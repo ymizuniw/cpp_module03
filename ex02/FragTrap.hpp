@@ -8,7 +8,7 @@
 #define DEFAULT_FRAGTRAP_ATTACK 30
 #define DEFAULT_FRAGTRAP_REPAIRE 10
 
-class FragTrap : public virtual ClapTrap {
+class FragTrap : public ClapTrap {
 public:
   FragTrap(void);
   FragTrap(std::string name);

@@ -30,7 +30,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
   return (*this);
 }
 
-ClapTrap::~ClapTrap(void) { print_msg("ClapTrap default destructor called."); }
+ClapTrap::~ClapTrap(void) { print_msg("ClapTrap destructor called."); }
 
 void ClapTrap::attack(const std::string &target) {
   std::cout << "[LOG] ";

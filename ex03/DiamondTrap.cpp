@@ -13,7 +13,7 @@ DiamondTrap::DiamondTrap(std::string name)
     : ClapTrap(name + "_clap_name", DEFAULT_FRAGTRAP_HP,
                DEFAULT_SCAVTRAP_ENERGY, DEFAULT_FRAGTRAP_ATTACK),
       ScavTrap(name), FragTrap(name), Name_(name) {
-  std::cout << "DiamondTrap::Constructor called" << std::endl;
+  std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
 void DiamondTrap::attack(const std::string &target) {
@@ -22,7 +22,7 @@ void DiamondTrap::attack(const std::string &target) {
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
     : ClapTrap(other), ScavTrap(other), FragTrap(other) {
-  std::cout << "DiamondTrap::Copy-constructor called" << std::endl;
+  std::cout << "DiamondTrap copy-constructor called" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
@@ -35,7 +35,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
 }
 
 DiamondTrap::~DiamondTrap(void) {
-  std::cout << "DiamondTrap::Destructor called" << std::endl;
+  std::cout << "DiamondTrap destructor called" << std::endl;
 }
 
 void DiamondTrap::takeDamage(unsigned int amount) {
