@@ -16,6 +16,8 @@ int main(void) {
   St5.print_status();
 #endif
   St1.attack("Scav2");
+  St4.attack("Scav5"); // St4=St3 attacks Scav5.
+  St5.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
   St2.takeDamage(DEFAULT_SCAVTRAP_ATTACK);
   St3.beRepaired(DEFAULT_SCAVTRAP_REPAIRE);
   St4.guradGate();

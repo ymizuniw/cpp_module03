@@ -8,10 +8,6 @@
 #define DEFAULT_SCAVTRAP_ATTACK 20
 #define DEFAULT_SCAVTRAP_REPAIRE 10
 
-// 同次元クラス間では属性に関係なくメンバーにアクセスできる。属性はアクセサともいい、外部からアクセスする時の属性を指す。
-// 継承時、子クラスは親クラスのprivate以外のメンバーにアクセスできる。親クラスは子クラスのpublicメンバー以外にアクセスできない。
-// 包含関係があri、逆は成り立たない。
-
 class ScavTrap : public virtual ClapTrap {
 public:
   ScavTrap(void);

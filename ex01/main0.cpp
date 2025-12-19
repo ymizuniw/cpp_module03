@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
 
 int main(void) {
+  ClapTrap Ct0; // default constructor call
   ClapTrap Ct1("Crap1");
   ClapTrap Ct2("Crap2");
   ClapTrap Ct3(Ct1);

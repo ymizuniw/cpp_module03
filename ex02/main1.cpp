@@ -1,7 +1,7 @@
 #include <ScavTrap.hpp>
 
 int main(void) {
-
+  ScavTrap St0; // default constructor call
   ScavTrap St1("Scav1");
   ScavTrap St2("Scav2");
   ScavTrap St3("Scav3");

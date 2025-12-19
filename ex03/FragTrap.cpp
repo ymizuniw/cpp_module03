@@ -16,8 +16,6 @@ FragTrap::FragTrap(std::string name)
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
   print_msg("FragTrap copy-constructor called");
-  if (this != &other)
-    *this = other;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &other) {

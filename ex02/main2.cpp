@@ -1,6 +1,7 @@
 #include <FragTrap.hpp>
 
 int main(void) {
+  FragTrap Ft0; // default constructor call
   FragTrap Ft1("Frag1");
   FragTrap Ft2("Frag2");
   FragTrap Ft3("Frag3");

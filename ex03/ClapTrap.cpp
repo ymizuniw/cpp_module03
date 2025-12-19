@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(std::string name, unsigned int hitPoints,
                    unsigned int energyPoints, unsigned int attackDamage)
     : Name_(name), HitPoints_(hitPoints), EnergyPoints_(energyPoints),
       AttackDamage_(attackDamage) {
-  print_msg("ClapTrap status designate constructor called.");
+  print_msg("ClapTrap parameterized constructor called.");
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)

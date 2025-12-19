@@ -16,8 +16,7 @@ ScavTrap::ScavTrap(std::string name)
 
 // ClapTrap::ClapTrap(const ClapTrap &other)
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
-  if (this != &other)
-    *this = other;
+  print_msg("ScavTrap copy-constructor called");
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
