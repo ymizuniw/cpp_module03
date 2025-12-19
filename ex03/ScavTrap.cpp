@@ -14,7 +14,6 @@ ScavTrap::ScavTrap(std::string name)
   print_msg("ScavTrap parameterized constructor called");
 }
 
-// ClapTrap::ClapTrap(const ClapTrap &other)
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
   print_msg("ScavTrap copy-constructor called");
 }
